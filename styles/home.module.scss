@@ -1,0 +1,32 @@
+@import "../styles/global/responsive.scss";
+@import "../styles/global/variable.scss";
+
+.back {
+    background-color: #9FBBCC;
+    margin: 0;
+    height: min(calc(100vw * 9 / 16), vwhMin(100));
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+    p{
+        position: relative;
+        margin: 0;
+        color: $c-wText;
+        font-weight: bold;
+        pointer-events: none;
+        user-select: none;
+    }
+
+    p:nth-child(1) {
+        font-size: vwhMin(12);
+    }
+
+
+    p:nth-child(2) {
+        font-size: vwhMin(5, 5vw);
+    }
+}

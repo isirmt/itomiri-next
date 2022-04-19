@@ -1,0 +1,28 @@
+// Responsive
+
+$breakpoints: (
+    min: 0,
+    xs: 384px,
+    sm: 512px,
+    md: 768px,
+    lg: 896px,
+    xl: 1280px,
+) !default;
+
+// breakpoint Media query Up
+@mixin mqUp($bp: md) {
+    @media (max-width: #{map-get($breakpoints, $bp)}) {
+        @content;
+    }
+}
+
+// breakpoint Media query Down
+@mixin mqDown($bp: md) {
+    @media (min-width: #{map-get($breakpoints, $bp)}) {
+        @content;
+    }
+}
+
+@function vwhMin($val, $min: 10vw){
+    @return max(min(#{$val}vw, #{$val}vh), $min);
+}

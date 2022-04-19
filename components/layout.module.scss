@@ -1,0 +1,14 @@
+@import "../styles/global/variable.scss";
+@import "../styles/global/responsive.scss";
+
+.headNav {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.navLinks {
+    display: flex;
+    
+}

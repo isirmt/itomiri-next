@@ -1,10 +1,24 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from './layout.module.css'
-import utilStyles from '../styles/utils.module.css'
+import styles from './layout.module.scss'
+import utilStyles from '../styles/utils.module.scss'
+import homeStyle from '../styles/home.module.scss'
 import Link from 'next/link'
 
 const name = 'Ito Miri'
+const nameJp = '井筒 ミリ'
+
+const navLinks = [
+  { path: "/",        name: "Top"     },
+  { path: "/about/",  name: "About"   },
+  { path: "/news/",   name: "News"    },
+  { path: "/blog/",   name: "Blog"    },
+  { path: "/works/",  name: "Works"   },
+  { path: "/dev/",    name: "Dev"     },
+  { path: "/inner/",  name: "Inner"   },
+  { path: "/joinus/", name: "JoinUs"  },
+]
+
 export const siteTitle = 'Sample Test Site'
 
 export default function Layout({ children, home }) {
@@ -28,15 +42,17 @@ export default function Layout({ children, home }) {
       <header className={styles.header}>
         {home ? (
           <>
-            <Image
-              priority
-              src="/images/profile.jpg"
-              className={utilStyles.borderCircle}
-              height={144}
-              width={144}
-              alt={name}
-            />
-            <h1 className={utilStyles.heading2Xl}>{name}</h1>
+          <div className={homeStyle.back}>
+            <p>{name}</p>
+            <p>作りたいものを形にする</p>
+          </div>
+          <nav className={Layout.headNav}>
+            <ul>
+              {navLinks.map(elem => (
+                <li><a href={elem.path}>{elem.name}</a></li>
+              ))}
+            </ul>
+          </nav>
           </>
         ) : (
           <>
