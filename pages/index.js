@@ -30,14 +30,38 @@ export default function Home() {
               <Image
                 priority
                 src="/images/home/thum1.png"
-                width={"100%"}
-                height={"100%"}
-                layout='intrinsic'
+                layout='fill'
                 alt={"RoadSignThumb"}
               />
             </div>
             <div className={home.gridB}>
-              vercel
+              <div>音楽</div>
+            </div>
+          </div>
+          <div className={home.sbTile}>
+            <div className={home.gridB}>
+              <Image
+                priority
+                src="/images/home/thum2.png"
+                layout='fill'
+                alt={"megahonThumb"}
+              />
+            </div>
+            <div className={home.gridA}>
+              <div>映像</div>
+            </div>
+          </div>
+          <div className={home.sbTile}>
+            <div className={home.gridA}>
+              <Image
+                priority
+                src="/images/home/thum3.png"
+                layout='fill'
+                alt={"atbThumb"}
+              />
+            </div>
+            <div className={home.gridB}>
+              <div>プログラム</div>
             </div>
           </div>
         </div>

@@ -2,82 +2,103 @@
 @import "../global/variable.scss";
 
 .back {
-    background-color: #9FBBCC;
+  background-color: #9fbbcc;
+  margin: 0;
+  height: min(calc(100vw * 9 / 16), vwhMin(100));
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+
+  p {
+    position: relative;
     margin: 0;
-    height: min(calc(100vw * 9 / 16), vwhMin(100));
-    width: 100%;
+    color: $c-wText;
+    font-weight: bold;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  p:nth-child(1) {
+    font-size: vwhMin(12);
+  }
+
+  p:nth-child(2) {
+    font-size: vwhMin(5, 5vw);
+  }
+}
+
+.homeGrid {
+  display: grid;
+  grid-template-columns: 70% 1fr;
+  grid-template-rows: vwhMin(40, 30vw) 1fr;
+  grid-template-areas:
+    "areaA areaB"
+    "areaC areaC";
+  margin: min(5vw, 5vh);
+
+  .sectionTitle {
+    color: $c-text;
+    font-weight: normal;
+    text-align: center;
+    font-size: 1.5rem;
+    height: 2rem;
+    user-select: none;
+  }
+
+  > div {
+    position: relative;
+  }
+
+  > .gridA {
+    grid-area: areaA;
+    // border: black solid 1px;
+  }
+
+  > .gridB {
+    grid-area: areaB;
+    // border: black solid 1px;
+  }
+
+  > .gridC {
+    grid-area: areaC;
+    padding: vwhMin(8, 8vw);
+  }
+}
+
+.sbTile {
+  display: flex;
+  display: grid;
+  width: 100%;
+  grid-template-columns: 40% 1fr 40%;
+  grid-template-rows: calc((40vw - vwhMin(8, 8vw)) * 9 / 16);
+  grid-template-areas: "tileA n tileB";
+
+  > div {
+    position: relative;
+  }
+
+  .gridA {
+    grid-area: tileA;
+  }
+
+  .gridB {
+    grid-area: tileB;
+  }
+
+  div {
+    font-size: vwhMin(3, 3vw);
+    color: $c-dimText;
     text-align: center;
     justify-content: center;
     align-items: center;
     display: flex;
     flex-direction: column;
-
-    p{
-        position: relative;
-        margin: 0;
-        color: $c-wText;
-        font-weight: bold;
-        pointer-events: none;
-        user-select: none;
-    }
-
-    p:nth-child(1) {
-        font-size: vwhMin(12);
-    }
-
-
-    p:nth-child(2) {
-        font-size: vwhMin(5, 5vw);
-    }
+  }
 }
 
-.homeGrid {
-    display: grid;
-    grid-template-columns: 75% 1fr;
-    grid-template-rows: vwhMin(40, 30vw) 1fr;
-    grid-template-areas:
-        "areaA areaB"
-        "areaC areaC";
-    margin-top: min(5vw, 5vh);
-
-    .sectionTitle {
-        color: $c-text;
-        font-weight: normal;
-        text-align: center;
-        font-size: 1.5rem;
-        height: 2rem;
-        user-select: none;
-    }
-
-    >.gridA {
-        grid-area: areaA;
-        // border: black solid 1px;
-    }
-
-    >.gridB {
-        grid-area: areaB;
-        // border: black solid 1px;
-    }
-
-    >.gridC {
-        grid-area: areaC;
-        // border: black solid 1px;
-    }    
-}
-
-.sbTile {
-    display: flex;
-    display: grid;
-    width: 100%;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 1fr;
-    grid-template-areas:"tileA tileB";
-    
-    .gridA {
-        grid-area: tileA;
-    }
-
-    .gridB {
-        grid-area: tileB;
-    }
+.sbTile:not(:last-child){
+    margin-bottom: vwhMin(5, 5vw);
 }

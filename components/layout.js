@@ -10,13 +10,10 @@ const nameJp = '井筒 ミリ'
 
 const navLinks = [
   { path: "/", name: "Top" },
-  { path: "/about/", name: "About" },
   { path: "/news/", name: "News" },
-  { path: "/blog/", name: "Blog" },
-  { path: "/works/", name: "Works" },
-  { path: "/dev/", name: "Dev" },
-  { path: "/inner/", name: "Inner" },
-  { path: "/joinus/", name: "JoinUs" },
+  { path: "/productions/", name: "Productions" },
+  { path: "https://itomiri.com", name: "itomiri" },
+  { path: "/links/", name: "Links" },
 ]
 
 export const siteTitle = '井筒ミリ -Ito Miri-'
@@ -73,11 +70,13 @@ export default function Layout({ children, home }) {
             <li><Link href="/"><a>Ito Miri</a></Link></li>
           </ul>
           <ul className={styles.navLinks}>
-            <li><Link href="/"><a>Top</a></Link></li>
-            <li><Link href="/news/"><a>News</a></Link></li>
-            <li><Link href="/productions/"><a>Productions</a></Link></li>
-            <li><Link href="https://itomiri.com"><a target="_blank" rel="noopener noreferrer">itomiri</a></Link></li>
-            <li><Link href="/links/"><a>Links</a></Link></li>
+            {navLinks.map((item,index) =>(
+              <li key={index}>
+                <Link href={item.path}>
+                  <a>{item.name}</a>
+                </Link>
+              </li>
+            ))}
           </ul>
         </nav>
       </header>
