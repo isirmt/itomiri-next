@@ -19,7 +19,7 @@ const navLinks = [
   { path: "/joinus/", name: "JoinUs" },
 ]
 
-export const siteTitle = 'Sample Test Site'
+export const siteTitle = '井筒ミリ -Ito Miri-'
 
 export default function Layout({ children, home }) {
   return (
@@ -74,14 +74,15 @@ export default function Layout({ children, home }) {
           </ul>
           <ul className={styles.navLinks}>
             <li><Link href="/"><a>Top</a></Link></li>
-            <li><Link href="/about/"><a>About</a></Link></li>
             <li><Link href="/news/"><a>News</a></Link></li>
             <li><Link href="/productions/"><a>Productions</a></Link></li>
+            <li><Link href="https://itomiri.com"><a target="_blank" rel="noopener noreferrer">itomiri</a></Link></li>
             <li><Link href="/links/"><a>Links</a></Link></li>
           </ul>
         </nav>
       </header>
       <main>{children}</main>
+      <footer>
       {!home && (
         <div className={styles.backToHome}>
           <Link href="/">
@@ -89,6 +90,10 @@ export default function Layout({ children, home }) {
           </Link>
         </div>
       )}
+      <div className={styles.footBox}>
+        <span>&copy; 2021-{new Date().getFullYear()}{" "}{name}</span>
+      </div>
+      </footer>
     </>
   )
 }

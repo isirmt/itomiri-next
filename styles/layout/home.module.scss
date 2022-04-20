@@ -30,3 +30,54 @@
         font-size: vwhMin(5, 5vw);
     }
 }
+
+.homeGrid {
+    display: grid;
+    grid-template-columns: 75% 1fr;
+    grid-template-rows: vwhMin(40, 30vw) 1fr;
+    grid-template-areas:
+        "areaA areaB"
+        "areaC areaC";
+    margin-top: min(5vw, 5vh);
+
+    .sectionTitle {
+        color: $c-text;
+        font-weight: normal;
+        text-align: center;
+        font-size: 1.5rem;
+        height: 2rem;
+        user-select: none;
+    }
+
+    >.gridA {
+        grid-area: areaA;
+        // border: black solid 1px;
+    }
+
+    >.gridB {
+        grid-area: areaB;
+        // border: black solid 1px;
+    }
+
+    >.gridC {
+        grid-area: areaC;
+        // border: black solid 1px;
+    }    
+}
+
+.sbTile {
+    display: flex;
+    display: grid;
+    width: 100%;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 1fr;
+    grid-template-areas:"tileA tileB";
+    
+    .gridA {
+        grid-area: tileA;
+    }
+
+    .gridB {
+        grid-area: tileB;
+    }
+}
