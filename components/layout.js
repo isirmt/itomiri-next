@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from './layout.module.scss'
 import utilStyles from '../styles/utils.module.scss'
-import homeStyle from '../styles/home.module.scss'
+import homeStyle from '../styles/layout/home.module.scss'
 import Link from 'next/link'
 
 const name = 'Ito Miri'
@@ -23,7 +23,7 @@ export const siteTitle = 'Sample Test Site'
 
 export default function Layout({ children, home }) {
   return (
-    <div className={styles.container}>
+    <>
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -70,6 +70,9 @@ export default function Layout({ children, home }) {
         )}
         <nav className={styles.headNav}>
           <ul className={styles.navLinks}>
+            <li><Link href="/"><a>Ito Miri</a></Link></li>
+          </ul>
+          <ul className={styles.navLinks}>
             <li><Link href="/"><a>Top</a></Link></li>
             <li><Link href="/about/"><a>About</a></Link></li>
             <li><Link href="/news/"><a>News</a></Link></li>
@@ -86,6 +89,6 @@ export default function Layout({ children, home }) {
           </Link>
         </div>
       )}
-    </div>
+    </>
   )
 }
