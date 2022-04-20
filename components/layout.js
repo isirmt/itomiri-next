@@ -9,14 +9,14 @@ const name = 'Ito Miri'
 const nameJp = '井筒 ミリ'
 
 const navLinks = [
-  { path: "/",        name: "Top"     },
-  { path: "/about/",  name: "About"   },
-  { path: "/news/",   name: "News"    },
-  { path: "/blog/",   name: "Blog"    },
-  { path: "/works/",  name: "Works"   },
-  { path: "/dev/",    name: "Dev"     },
-  { path: "/inner/",  name: "Inner"   },
-  { path: "/joinus/", name: "JoinUs"  },
+  { path: "/", name: "Top" },
+  { path: "/about/", name: "About" },
+  { path: "/news/", name: "News" },
+  { path: "/blog/", name: "Blog" },
+  { path: "/works/", name: "Works" },
+  { path: "/dev/", name: "Dev" },
+  { path: "/inner/", name: "Inner" },
+  { path: "/joinus/", name: "JoinUs" },
 ]
 
 export const siteTitle = 'Sample Test Site'
@@ -42,17 +42,10 @@ export default function Layout({ children, home }) {
       <header className={styles.header}>
         {home ? (
           <>
-          <div className={homeStyle.back}>
-            <p>{name}</p>
-            <p>作りたいものを形にする</p>
-          </div>
-          <nav className={Layout.headNav}>
-            <ul>
-              {navLinks.map(elem => (
-                <li><a href={elem.path}>{elem.name}</a></li>
-              ))}
-            </ul>
-          </nav>
+            <div className={homeStyle.back}>
+              <p>{name}</p>
+              <p>作りたいものを形にする</p>
+            </div>
           </>
         ) : (
           <>
@@ -75,6 +68,15 @@ export default function Layout({ children, home }) {
             </h2>
           </>
         )}
+        <nav className={styles.headNav}>
+          <ul className={styles.navLinks}>
+            <li><Link href="/"><a>Top</a></Link></li>
+            <li><Link href="/about/"><a>About</a></Link></li>
+            <li><Link href="/news/"><a>News</a></Link></li>
+            <li><Link href="/productions/"><a>Productions</a></Link></li>
+            <li><Link href="/links/"><a>Links</a></Link></li>
+          </ul>
+        </nav>
       </header>
       <main>{children}</main>
       {!home && (
