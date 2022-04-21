@@ -50,6 +50,49 @@
 
   > div {
     position: relative;
+    overflow: hidden;
+
+    ul {
+      margin: 2rem vwhMin(4, 6vw);
+      li {
+        list-style: none;
+        font-size: 1.2rem;
+
+        a {
+          text-decoration: none;
+          color: $c-text;
+        }
+
+        small {
+          color: $c-dimText;
+          margin-left: 1em;
+        }
+
+        small::before {
+          color: $c-dimText;
+          content: "- ";
+          user-select: none;
+        }
+      }
+    }
+  }
+
+  .moreBox {
+    position: absolute;
+    top: calc(100% - 2rem * 1.5);
+    left: calc(100% - 15% * 1.5);
+    text-decoration: none;
+    width: 15%;
+    height: 2rem;
+    text-align: center;
+    border: 1px black solid;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    span {
+      color: $c-text;
+    }
   }
 
   > .gridA {
@@ -99,6 +142,6 @@
   }
 }
 
-.sbTile:not(:last-child){
-    margin-bottom: vwhMin(5, 5vw);
+.sbTile:not(:last-child) {
+  margin-bottom: vwhMin(5, 5vw);
 }
