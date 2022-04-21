@@ -39,11 +39,6 @@ export default function Home({ allPostsData }) {
               </li>
             ))}
           </ul>
-          <Link href="/news/">
-            <a className={home.moreBox}>
-              <span>more</span>
-            </a>
-          </Link>
         </div>
 
         <div className={home.gridB}>

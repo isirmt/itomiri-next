@@ -45,8 +45,8 @@ export default function Layout({ children, home }) {
             </div>
           </>
         ) : (
-          <>
-            <Link href="/">
+          <div className={styles.blank}>
+            {/* <Link href="/">
               <a>
                 <Image
                   priority
@@ -62,8 +62,8 @@ export default function Layout({ children, home }) {
               <Link href="/">
                 <a className={utilStyles.colorInherit}>{name}</a>
               </Link>
-            </h2>
-          </>
+            </h2> */}
+          </div>
         )}
         <nav className={styles.headNav}>
           <ul className={styles.navLinks}>
