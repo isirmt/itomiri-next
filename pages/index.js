@@ -3,8 +3,18 @@ import Image from 'next/image'
 import Layout, { siteTitle } from '../components/layout'
 import home from '../styles/layout/home.module.scss'
 import { TwitterTimelineEmbed, TwitterShareButton, TwitterFollowButton, TwitterHashtagButton, TwitterMentionButton, TwitterTweetEmbed, TwitterMomentShare, TwitterDMButton, TwitterVideoEmbed, TwitterOnAirButton } from 'react-twitter-embed';
+import { getSortedPostsData } from '../lib/posts'
 
-export default function Home() {
+export async function getServerSideProps(context) {
+  const allPostsData = getSortedPostsData()
+  return {
+    props: {
+      allPostsData
+    }
+  }
+}
+
+export default function Home({allPostsData}) {
   return (
     <Layout home>
       <Head>
@@ -69,6 +79,21 @@ export default function Home() {
       </section>
       <div> {/* ここはgrid */}
       </div>
+{/* className={`${utilStyles.headingMd} ${utilStyles.padding1px}`} */}
+      <section>
+        <h2>Blog</h2>
+        <ul>
+          {allPostsData.map(({ id, date, title }) => (
+            <li key={id}>
+              {title}
+              <br />
+              {id}
+              <br />
+              {date}
+            </li>
+          ))}
+        </ul>
+      </section>
     </Layout>
   )
 }
