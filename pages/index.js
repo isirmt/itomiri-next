@@ -25,7 +25,7 @@ export default function Home({ allPostsData }) {
       <section className={home.homeGrid}>
 
         <div className={home.gridA}>
-          <div className={home.sectionTitle}>News</div>
+          <div className={home.sectionTitle}>Posts</div>
           <ul>
             {allPostsData.slice(0, 6).map(({ id, date, title, type }) => (
               <li key={id}>
@@ -39,7 +39,7 @@ export default function Home({ allPostsData }) {
               </li>
             ))}
           </ul>
-          <Link href="/news/">
+          <Link href="/posts/">
             <p className={home.moreTextP}><a title='News' className={home.moreText}>more...</a></p>
           </Link>
         </div>

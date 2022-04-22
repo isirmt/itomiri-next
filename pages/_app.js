@@ -1,7 +1,6 @@
 // import '../styles/normalize.css'
 import '../styles/sanitize.css'
 import '../styles/globals.scss'
-import {MDXProvider} from '@mdx-js/react'
 
 
 function MyApp({ Component, pageProps }) {

@@ -1,0 +1,63 @@
+@import "../global/responsive.scss";
+@import "../global/variable.scss";
+
+.main {
+    width: 740px;
+    background-color: white;
+    margin: 5rem auto;
+    border-style: solid;
+    border-width: 0 0 0 0;
+    border-color: black;
+    border-radius: 5px;
+    padding: 30px;
+    box-shadow: 0 2px 15px rgb(63, 63, 63);
+  
+  
+    @include mqUp(md) {
+      margin: 0;
+      width: 100%;
+      border: none;
+      padding: 50px;
+      box-shadow: none;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    ul {
+        margin: 1rem auto;
+        padding: 0;
+        width: 100%;
+        @include mqUp(md) {
+          width: 85%;
+        }
+        li {
+          list-style: none;
+          font-size: 1.2rem;
+          // width: 300px;
+  
+          a {
+            text-decoration: none;
+            color: $c-text;
+          }
+  
+          small {
+            font-size: 0.9em;
+            color: $c-dimText;
+            margin-left: 1em;
+          }
+  
+          small::before {
+            color: $c-dimText;
+            content: "- ";
+            user-select: none;
+          }
+  
+          .typeTitle {
+            color: $c-green;
+          }
+        }
+      }
+
+}

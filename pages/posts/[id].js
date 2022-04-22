@@ -3,6 +3,7 @@ import { getAllPostIds, getPostData } from '../../lib/posts'
 import Head from 'next/head'
 import Date from '../../components/date'
 import pcss from '../../styles/layout/posts.module.scss'
+import Link from "next/link";
 
 export default function Post({ postData }) {
     return (
@@ -19,6 +20,9 @@ export default function Post({ postData }) {
                     author:{postData.author}
                 </div>
                 <div className={pcss.contents} dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+                <Link href="/posts/">
+                    <a className={pcss.backLink}>記事一覧へ</a>
+                </Link>
             </article>
         </Layout>
     )

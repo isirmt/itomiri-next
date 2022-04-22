@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from './layout.module.scss'
-import utilStyles from '../styles/utils.module.scss'
 import homeStyle from '../styles/layout/home.module.scss'
 import Link from 'next/link'
 
@@ -10,7 +9,7 @@ const nameJp = '井筒 ミリ'
 
 const navLinks = [
   { path: "/", name: "Top" },
-  { path: "/news/", name: "News" },
+  { path: "/posts/", name: "Posts" },
   { path: "/productions/", name: "Productions" },
   { path: "https://itomiri.com", name: "itomiri" },
   { path: "/links/", name: "Links" },
@@ -40,42 +39,31 @@ export default function Layout({ children, home }) {
           content="https://blog.itomiri.com/images/assets/triangle.svg" />
         <meta name="theme-color" content="#FFFD98" />
         <meta name="og:title" content={siteTitle} />
+        <meta name='og:description' content='井筒ミリのブログページ' />
         {/* <meta name="twitter:card" content="summary_large_image" /> */}
-        {/* <meta http-equiv="X-UA-Compatible" content="IE=edge" /> */}
         <meta name="format-detection" content="email=no,telephone=no,address=no" />
       </Head>
       <header className={styles.header}>
         {home ? (
           <>
+            <div className={styles.blank} />
             <div className={homeStyle.back}>
+              <Image
+                src='/images/assets/20220422.png'
+                alt='Thum'
+                className={homeStyle.backImg}
+                layout='fill'
+              />
               <p>{name}</p>
               <p>作りたいものを形にする</p>
             </div>
           </>
         ) : (
-          <div className={styles.blank}>
-            {/* <Link href="/">
-              <a>
-                <Image
-                  priority
-                  src="/images/profile.jpg"
-                  className={utilStyles.borderCircle}
-                  height={108}
-                  width={108}
-                  alt={name}
-                />
-              </a>
-            </Link>
-            <h2 className={utilStyles.headingLg}>
-              <Link href="/">
-                <a className={utilStyles.colorInherit}>{name}</a>
-              </Link>
-            </h2> */}
-          </div>
+          <div className={styles.blank} />
         )}
         <nav className={styles.headNav}>
           <ul className={styles.navLinks}>
-            <li><Link href="/"><a>Ito Miri</a></Link></li>
+            <li><Link href="/"><a>Ito Miri<small>.blog</small></a></Link></li>
           </ul>
           <ul className={styles.navLinks}>
             {navLinks.map((item, index) => (
@@ -98,7 +86,7 @@ export default function Layout({ children, home }) {
         </div>
       )} */}
         <div className={styles.footBox}>
-          <span>&copy; 2021-{new Date().getFullYear()}{" "}{name}</span>
+          <span>&copy; 2021-{new Date().getFullYear()}{" "}{name} 井筒ミリ</span>
         </div>
       </footer>
     </>

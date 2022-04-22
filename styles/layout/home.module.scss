@@ -2,15 +2,22 @@
 @import "../global/variable.scss";
 
 .back {
-  background-color: #9fbbcc;
+  background-color: black;
   margin: 0;
-  height: min(calc(100vw * 9 / 16), vwhMin(100));
+  height: min(calc(100vw * 9 / 16), calc(vwhMin(100) - 5rem));
   width: 100%;
   text-align: center;
   justify-content: center;
   align-items: center;
   display: flex;
   flex-direction: column;
+  position: relative;
+
+  .backImg {
+    opacity: .4;
+    user-select: none;
+    pointer-events: none;
+  }
 
   p {
     position: relative;
@@ -62,6 +69,9 @@
       margin: 1rem auto;
       padding: 0;
       width: min(50%, 500px);
+      @include mqUp(md) {
+        width: 85%;
+      }
       li {
         list-style: none;
         font-size: 1.2rem;
@@ -92,6 +102,8 @@
 
     .moreTextP {
       text-align: center;
+      cursor: pointer;
+      user-select: none;
     }
 
     .moreText {
@@ -105,7 +117,7 @@
 
   > .gridA {
     grid-area: areaA;
-    border: black solid 1px;
+    // border: black solid 1px;
     justify-content: right;
   }
 
@@ -116,11 +128,14 @@
     @include mqUp(md) {
       display: none;
     }
+    user-select: none;
   }
 
   > .gridC {
     grid-area: areaC;
     padding: vwhMin(8, 8vw);
+    user-select: none;
+    pointer-events: none;
   }
 }
 

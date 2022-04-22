@@ -3,6 +3,7 @@ title: 'ページ開設のお知らせ'
 date: '2022-04-21'
 lastUpdated: '2022-04-22'
 type: 'News'
+author: '井筒ミリ'
 ---
 
 こんにちは。
