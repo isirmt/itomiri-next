@@ -29,15 +29,18 @@ export default function Layout({ children, home }) {
           name="description"
           content="井筒ミリの記事サイト"
         />
-        <meta
+        {/* <meta
           property="og:image"
           content={`https://og-image.vercel.app/${encodeURI(
             siteTitle
           )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
-        />
+        /> */}
+        <meta
+          property="og:image"
+          content="/triangle.svg" />
         <meta name="theme-color" content="#FFFD98" />
         <meta name="og:title" content={siteTitle} />
-        <meta name="twitter:card" content="summary_large_image" />
+        {/* <meta name="twitter:card" content="summary_large_image" /> */}
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="format-detection" content="email=no,telephone=no,address=no" />
       </Head>
