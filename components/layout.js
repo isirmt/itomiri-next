@@ -41,7 +41,7 @@ export default function Layout({ children, home }) {
         <meta name="theme-color" content="#FFFD98" />
         <meta name="og:title" content={siteTitle} />
         {/* <meta name="twitter:card" content="summary_large_image" /> */}
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        {/* <meta http-equiv="X-UA-Compatible" content="IE=edge" /> */}
         <meta name="format-detection" content="email=no,telephone=no,address=no" />
       </Head>
       <header className={styles.header}>
