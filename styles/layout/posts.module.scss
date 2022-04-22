@@ -18,68 +18,76 @@
   }
 
   a {
-      color: $c-link;
-      text-decoration: none;
-      font-weight: bold;
-      position: relative;
+    color: $c-link;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
   }
 
   a::after {
     position: absolute;
     bottom: 0.2em;
     left: 0;
-    content: '';
+    content: "";
     width: 100%;
     height: 2px;
     background: $c-link;
     transform: scale(0, 1);
     transform-origin: left top;
-    transition: transform .3s;
-}
+    transition: transform 0.3s;
+  }
 
-a:hover::after {
+  a:hover::after {
     transform: scale(1, 1);
-}
+  }
 
   .date {
-      color: $c-dimText;
-      margin-left: 1em;
+    color: $c-dimText;
+    margin-left: 1em;
   }
 
   .author {
     color: $c-dimText;
     margin-left: 1em;
-}
+  }
 
   .contents {
-      margin-top: 20px;
-      margin-left: 1em;
+    margin-top: 20px;
+    margin-left: 1em;
 
-      p:not(:last-child){
-          margin-bottom: 5px;
-      }
+    p:not(:last-child) {
+      margin-bottom: 5px;
+    }
 
-      img {
-          width: 70%;
-          @include mqUp(md) {
-            width: 100%
-          }
+    img {
+      width: 70%;
+      @include mqUp(md) {
+        width: 100%;
       }
+    }
 
-      hr {
-          border: none;
-          background-color: #fff;
-          border-width: 1px 0 0 0;
-          border-top: dotted;
-          border-color: $c-dimText;
-      }
+    hr {
+      border: none;
+      background-color: #fff;
+      border-width: 1px 0 0 0;
+      border-top: dotted;
+      border-color: $c-dimText;
+    }
 
-      li:not(:last-child) {
-        margin-bottom: 5px;
-      }
+    li:not(:last-child) {
+      margin-bottom: 5px;
+    }
 
-      li {
-        list-style: circle;
+    li {
+      list-style: circle;
+    }
+
+    code {
+    }
+
+    pre {
+      > code {
       }
+    }
   }
 }
