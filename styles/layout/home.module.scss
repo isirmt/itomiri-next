@@ -33,11 +33,17 @@
 .homeGrid {
   display: grid;
   grid-template-columns: 70% 1fr;
-  grid-template-rows: vwhMin(40, 30vw) 1fr;
+  grid-template-rows: 30rem 1fr;
   grid-template-areas:
     "areaA areaB"
     "areaC areaC";
   margin: min(5vw, 5vh);
+
+  @include mqUp(md) {
+    grid-template-areas:
+      "areaA areaA"
+      "areaC areaC";
+  }
 
   .sectionTitle {
     color: $c-text;
@@ -53,10 +59,13 @@
     overflow: hidden;
 
     ul {
-      margin: 2rem vwhMin(4, 6vw);
+      margin: 1rem auto;
+      padding: 0;
+      width: min(50%, 500px);
       li {
         list-style: none;
         font-size: 1.2rem;
+        // width: 300px;
 
         a {
           text-decoration: none;
@@ -74,36 +83,39 @@
           content: "- ";
           user-select: none;
         }
+
+        .typeTitle {
+          color: $c-green;
+        }
       }
     }
-  }
 
-  .moreBox {
-    position: absolute;
-    top: calc(100% - 2rem * 1.5);
-    left: calc(100% - 15% * 1.5);
-    text-decoration: none;
-    width: 15%;
-    height: 2rem;
-    text-align: center;
-    border: 1px black solid;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    span {
-      color: $c-text;
+    .moreTextP {
+      text-align: center;
+    }
+
+    .moreText {
+      color: black;
+      width: 6rem;
+      // text-align: center;
+      text-decoration: none;
+      font-size: 1.1rem;
     }
   }
 
   > .gridA {
     grid-area: areaA;
-    // border: black solid 1px;
+    border: black solid 1px;
+    justify-content: right;
   }
 
   > .gridB {
     grid-area: areaB;
     // border: black solid 1px;
+
+    @include mqUp(md) {
+      display: none;
+    }
   }
 
   > .gridC {
@@ -119,6 +131,14 @@
   grid-template-columns: 40% 1fr 40%;
   grid-template-rows: calc((40vw - vwhMin(8, 8vw)) * 9 / 16);
   grid-template-areas: "tileA n tileB";
+
+  @include mqUp(md) {
+    grid-template-columns: 100%;
+    grid-template-rows: calc((90vw - vwhMin(8, 8vw) * 2) * 9 / 16) 5rem;
+    grid-template-areas:
+      "tileA"
+      "tileB";
+  }
 
   > div {
     position: relative;
@@ -140,6 +160,18 @@
     align-items: center;
     display: flex;
     flex-direction: column;
+
+    @include mqUp(md) {
+      font-size: 2rem;
+    }
+  }
+}
+
+.sbTile:nth-child(2n){
+  @include mqUp(md) {
+    grid-template-areas:
+      "tileB"
+      "tileA";
   }
 }
 
