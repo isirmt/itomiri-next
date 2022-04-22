@@ -22,10 +22,12 @@ export default function Layout({ children, home }) {
   return (
     <>
       <Head>
-        <link rel="icon" href="/favicon.ico" />
+        {/* <link rel="icon" href="/favicon.ico" /> */}
+        <link rel="icon" type="image/svg" href="/triangle.svg" />
+        <meta charset="utf-8" />
         <meta
           name="description"
-          content="Learn how to build a personal website using Next.js"
+          content="井筒ミリの記事サイト"
         />
         <meta
           property="og:image"
@@ -33,8 +35,11 @@ export default function Layout({ children, home }) {
             siteTitle
           )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
         />
+        <meta name="theme-color" content="#FFFD98" />
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="format-detection" content="email=no,telephone=no,address=no" />
       </Head>
       <header className={styles.header}>
         {home ? (
@@ -70,7 +75,7 @@ export default function Layout({ children, home }) {
             <li><Link href="/"><a>Ito Miri</a></Link></li>
           </ul>
           <ul className={styles.navLinks}>
-            {navLinks.map((item,index) =>(
+            {navLinks.map((item, index) => (
               <li key={index}>
                 <Link href={item.path}>
                   <a>{item.name}</a>
@@ -82,16 +87,16 @@ export default function Layout({ children, home }) {
       </header>
       <main>{children}</main>
       <footer>
-      {!home && (
+        {/* {!home && (
         <div className={styles.backToHome}>
           <Link href="/">
             <a>← Back to home</a>
           </Link>
         </div>
-      )}
-      <div className={styles.footBox}>
-        <span>&copy; 2021-{new Date().getFullYear()}{" "}{name}</span>
-      </div>
+      )} */}
+        <div className={styles.footBox}>
+          <span>&copy; 2021-{new Date().getFullYear()}{" "}{name}</span>
+        </div>
       </footer>
     </>
   )
