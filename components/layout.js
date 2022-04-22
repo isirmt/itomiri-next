@@ -37,7 +37,7 @@ export default function Layout({ children, home }) {
         /> */}
         <meta
           property="og:image"
-          content="/triangle.svg" />
+          content="https://blog.itomiri.com/images/assets/triangle.svg" />
         <meta name="theme-color" content="#FFFD98" />
         <meta name="og:title" content={siteTitle} />
         {/* <meta name="twitter:card" content="summary_large_image" /> */}
