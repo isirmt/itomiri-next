@@ -27,10 +27,10 @@ export default function Home({ allPostsData }) {
         <div className={home.gridA}>
           <div className={home.sectionTitle}>News</div>
           <ul>
-            {allPostsData.map(({ id, date, title }) => (
+            {allPostsData.slice(0, 6).map(({ id, date, title, type }) => (
               <li key={id}>
                 <Link href={`/posts/${id}`}>
-                  <a>{title}</a>
+                  <a><span>{type}</span><span className={home.typeTitle}> - </span>{title}</a>
                 </Link>
                 <br />
                 <small >
@@ -39,13 +39,16 @@ export default function Home({ allPostsData }) {
               </li>
             ))}
           </ul>
+          <Link href="/news/">
+            <p className={home.moreTextP}><a title='News' className={home.moreText}>more...</a></p>
+          </Link>
         </div>
 
         <div className={home.gridB}>
           <TwitterTimelineEmbed
             sourceType="profile"
             screenName="itomiri"
-            options={{ margin: "0 5%", width: "100%", height: "max(min(40vw, 40vh), 30vw)" }}
+            options={{ margin: "0 5%", width: "100%", height: "30rem" }}
           />
         </div>
 
