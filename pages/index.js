@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import Image from 'next/image'
 import Layout, { siteTitle } from '../components/layout'
 import home from '../styles/layout/home.module.scss'
@@ -6,6 +5,8 @@ import { TwitterTimelineEmbed, TwitterShareButton, TwitterFollowButton, TwitterH
 import { getSortedPostsData } from '../lib/posts'
 import Link from 'next/link'
 import Date from '../components/date'
+import SEO from '../components/Seo'
+
 
 export async function getServerSideProps(context) {
   const allPostsData = getSortedPostsData()
@@ -19,9 +20,10 @@ export async function getServerSideProps(context) {
 export default function Home({ allPostsData }) {
   return (
     <Layout home>
-      <Head>
-        <title>{siteTitle}</title>
-      </Head>
+      <SEO
+        pageTitle={'Home'}
+        pageDescription={'井筒ミリのブログページ'}
+      />
       <section className={home.homeGrid}>
 
         <div className={home.gridA}>

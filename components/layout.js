@@ -24,22 +24,13 @@ export default function Layout({ children, home }) {
         {/* <link rel="icon" href="/favicon.ico" /> */}
         <link rel="icon" type="image/svg" href="/triangle.svg" />
         <meta charset="utf-8" />
-        <meta
-          name="description"
-          content="井筒ミリの記事サイト"
-        />
         {/* <meta
           property="og:image"
           content={`https://og-image.vercel.app/${encodeURI(
             siteTitle
           )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
         /> */}
-        <meta
-          property="og:image"
-          content="https://blog.itomiri.com/images/assets/triangle.svg" />
         <meta name="theme-color" content="#FFFD98" />
-        <meta name="og:title" content={siteTitle} />
-        <meta name='og:description' content='井筒ミリのブログページ' />
         {/* <meta name="twitter:card" content="summary_large_image" /> */}
         <meta name="format-detection" content="email=no,telephone=no,address=no" />
       </Head>
