@@ -47,8 +47,10 @@
   margin: min(5vw, 5vh);
 
   @include mqUp(md) {
+    grid-template-rows: 30rem 30rem 1fr;
     grid-template-areas:
       "areaA areaA"
+      "areaB areaB"
       "areaC areaC";
   }
 
@@ -124,10 +126,6 @@
   > .gridB {
     grid-area: areaB;
     // border: black solid 1px;
-
-    @include mqUp(md) {
-      display: none;
-    }
     user-select: none;
   }
 
