@@ -1,16 +1,17 @@
 import Layout from "../../components/layout";
 import { getAllPostIds, getPostData } from '../../lib/posts'
-import Head from 'next/head'
 import Date from '../../components/date'
 import pcss from '../../styles/layout/posts.module.scss'
 import Link from "next/link";
+import SEO from '../../components/Seo'
 
 export default function Post({ postData }) {
     return (
         <Layout>
-            <Head>
-                <title>{postData.title + " - 井筒ミリ"}</title>
-            </Head>
+            <SEO
+                pageTitle={postData.title}
+                pageDescription={postData.title}
+            />
             <article className={pcss.main}>
                 <h1>{postData.title}</h1>
                 <div className={pcss.date}>
