@@ -6,6 +6,47 @@
   background-color: transparent;
 }
 
+.mLinks {
+  display: none;
+  @include mqUp(md) {
+    width: 80%;
+    height: auto;
+    padding: 0.7rem 0;
+    background-color: transparent;
+    margin: 1rem auto;
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    box-shadow: 0 2px 5px rgb(63, 63, 63);
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+
+    ul {
+      display: flex;
+      flex-wrap: wrap-reverse;
+      margin: 0 auto;
+      padding: 0;
+      justify-content: center;
+
+      li {
+        list-style: none;
+        text-align: center;
+
+        a {
+          color: $c-text;
+          text-decoration: none;
+        }
+      }
+
+      li:not(:last-child) {
+        margin-right: 1rem;
+      }
+    }
+  }
+}
+
 .headNav::before {
   display: block;
   content: "";

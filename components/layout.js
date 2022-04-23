@@ -11,8 +11,8 @@ const navLinks = [
   { path: "/", name: "Top" },
   { path: "/posts/", name: "Posts" },
   { path: "/productions/", name: "Productions" },
-  { path: "https://itomiri.com", name: "itomiri" },
   { path: "/links/", name: "Links" },
+  { path: "https://itomiri.com", name: "itomiri" },
 ]
 
 export const siteTitle = '井筒ミリ -Ito Miri-'
@@ -66,6 +66,17 @@ export default function Layout({ children, home }) {
             ))}
           </ul>
         </nav>
+        <div className={styles.mLinks}>
+          <ul className={styles.navLinks}>
+            {navLinks.map((item, index) => (
+              <li key={index}>
+                <Link href={item.path}>
+                  <a>{item.name}</a>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
       </header>
       <main>{children}</main>
       <footer>
