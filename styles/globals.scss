@@ -20,7 +20,9 @@ main {
 }
 
 a {
-    position: relative;
+  color: $c-link;
+  text-decoration: none;
+  position: relative;
 }
 
 a::after {

@@ -2,7 +2,7 @@
 @import "../global/variable.scss";
 
 .main {
-  width: 740px;
+  width: min(100%, 767px);
   background-color: white;
   margin: 5rem auto;
   border-style: solid;
