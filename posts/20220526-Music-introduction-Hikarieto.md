@@ -18,8 +18,8 @@ Twitter([@ItoMiri](https://twitter.com/ItoMiri))
 
 Twitter
 
-- YouTube : https://youtu.be/fLzaukbdwy0
-- niconico : https://nico.ms/sm38477839
+- [YouTube](https://youtu.be/fLzaukbdwy0)
+- [niconico](https://nico.ms/sm38477839)
 
 以下，サムネイル
 

@@ -18,8 +18,8 @@ Twitter([@ItoMiri](https://twitter.com/ItoMiri))
 
 Twitter([@vetty_Create](https://twitter.com/vetty_Create))
 
-- YouTube : https://youtu.be/baysjlAdCG0
-- niconico : https://nico.ms/sm39275715
+- [YouTube](https://youtu.be/baysjlAdCG0)
+- [niconico](https://nico.ms/sm39275715)
 
 以下，サムネイル
 
